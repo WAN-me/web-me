@@ -1,0 +1,128 @@
+@media (hover: hover) {
+  beaver{
+    width: 30%;
+  }
+  #preb{
+    width:20px;
+    background:blue;
+}
+  .beaver::before {
+    content: "";
+    height: 50px;
+    width: 50px;
+    color: blue;
+  }
+@font-face {
+    font-family: "roboto";
+    src: url("Roboto.woff2");
+  }
+  
+  svg {
+    fill: black;
+  }
+  svg:hover {
+    fill: #1932c8;
+  }
+  p {
+  background-color: #ffffff;
+    padding-left: 4px;
+    border: 2px solid rgb(190, 190, 190);
+    border-radius: 5px;
+    width: auto;
+  }
+
+html {
+  font-size: 0.3in;
+  font-family: "roboto";
+  background-color: #eff1ff;
+}
+
+.leftup {
+  width: 50%;
+  float: left;
+}
+container{
+  line-height: 38px;
+  margin-bottom: 30px;
+  width: 100%;
+  
+}
+div {
+  padding: 15px;
+  margin: 0 auto;
+}
+.rightup {
+  width: 50%;
+  float: right;
+}
+.leftdown {
+  width: 50%;
+  float: left;
+}
+
+.rightdown {
+  width: 50%;
+  float: right;
+}
+}
+@media (hover: none) {
+  @font-face {
+    font-family: "roboto";
+    src: url("Roboto.woff2");
+  }
+  beaver{
+    width: 30%;
+    background-color: #1932c8;
+    float: left;
+  }
+  
+  svg {
+    fill: black;
+    width: 27%
+  }
+  svg:hover {
+    fill: #1932c8;
+  }
+  p {
+  background-color: #ffffff;
+    padding-left: 0.15in;
+    border: 0.04in solid rgb(190, 190, 190);
+    border-radius: 0.3in;
+    width: auto;
+  }
+
+html {
+  font-size: 0.3in;
+  font-family: "roboto";
+  background-color: #eff1ff;
+}
+
+container{
+    line-height: 0.38in;
+    margin-bottom: 0.3in;
+    width: 100%;
+    
+}
+div {
+    padding: 0.05in;
+    margin: 0 auto;
+}
+.leftup {
+  width: 100%;
+  float: left;
+}
+.rightup {
+  width: 100%;
+  float: left;
+}
+.leftdown {
+  width: 100%;
+  float: left;
+}
+
+.rightdown {
+  width: 100%;
+  float: left;
+}
+
+}

@@ -1,0 +1,56 @@
+@font-face {
+    font-family: "roboto";
+    src: url("Roboto.woff2");
+  }
+  
+  svg {
+    fill: black;
+    width: 27%
+  }
+  svg:hover {
+    fill: #1932c8;
+  }
+  p {
+  background-color: #ffffff;
+    padding-left: 0.15in;
+    border: 0.04in solid rgb(190, 190, 190);
+    border-radius: 0.3in;
+    width: auto;
+  }
+
+html {
+  font-size: 0.3in;
+  font-family: "roboto";
+  background-color: #eff1ff;
+}
+
+container{
+    line-height: 0.38in;
+    margin-bottom: 0.3in;
+    width: 100%;
+    
+}
+div {
+    padding: 0.05in;
+    margin: 0 auto;
+}
+.leftup {
+  width: 100%;
+  float: left;
+}
+.rightup {
+  width: 100%;
+  float: left;
+}
+.leftdown {
+  width: 100%;
+  float: left;
+}
+
+.rightdown {
+  width: 100%;
+  float: left;
+}
+.beaver{
+    width: 50%;
+}
