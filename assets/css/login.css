@@ -27,15 +27,30 @@ input {
 	border-style: none;
 
 }
-
+@media (orientation: portrait){
 #field-box {
 	background: var(--bg-color);
 	position:relative;
-	width: 30%;
+	
+	width: 90%;
 	margin: 150px auto;
 	padding: 25px;
 	border-radius: 25px;
 }
+}
+
+@media (orientation: landscape){
+	#field-box {
+		background: var(--bg-color);
+		position:relative;
+		
+		width: 30%;
+		margin: 150px auto;
+		padding: 25px;
+		border-radius: 25px;
+	}
+	}
+
 
 .field-box-title {
 	text-align: center;
