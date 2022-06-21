@@ -1,6 +1,6 @@
 import os.path
 import sbeaver
-server = sbeaver.Server(port=8000)
+server = sbeaver.Server(port=8000, sync=False)
 import re
 
 @server.sbind('/favicon.ico')
