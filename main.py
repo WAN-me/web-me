@@ -1,31 +1,29 @@
-import os.path
+from traceback import print_tb
 import sbeaver
+from sbeaver import file_server
 server = sbeaver.Server(port=8000, sync=False)
 import re
+
+
 
 @server.sbind('/favicon.ico')
 def fav(req):
     return sbeaver.redirect(301, '/assets/images/svg/icon.svg')
 
+@server.ebind('/user<uid>')
+def user(req, uid):
+    with open('account.html', 'r') as f:
+        return 200, f.read(-1).replace("get_user(0)",f"get_user({uid})")
+
+@server.bind('/')
+def index(req):
+    with open('index.html', 'r') as f:
+        return 200, f.read(-1)
+
 
 @server.bind(r'/(.*)')
-def alll(req, filename = 'index.html'):
-    ex = re.split('\.', req.path)[-1]
-    if os.path.exists(filename):
-        if ex in sbeaver.Types.image.__dict__:
-            return sbeaver.file(filename, sbeaver.Types.image.__dict__[ex])
-        elif ex == 'html':
-            with open(filename, 'r') as f:
-                return 200, f.read(-1)
-        elif ex in sbeaver.Types.text.__dict__:
-            return sbeaver.file(filename, sbeaver.Types.text.__dict__[ex])
-        else:
-            with open(filename, 'rb') as f:
-                return 200, f.read(-1)
-    with open('404.html') as f:
-        return 404, f.read(-1)
-
-
+def all(req:sbeaver.Request, filename = 'index.html'):
+    return file_server.manage_files(req, False)
 
 
 @server.code404()

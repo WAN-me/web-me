@@ -5,17 +5,42 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>WANilla</title>
-    <script type="text/javascript" src="/user.js"></script>
+    <script type="text/javascript" src="assets/js/user.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="assets/css/login.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/user.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/ui.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/hystmodal.css">
 </head>
 
 <body onload="get_user(0)">
     <div id="field-box">
         <p class="field-box-title" id="hello_user">Hello, {user}</p>
         <p id="online">online</p>
-        <a id="link" href="lorem.html"><img id='img' src="favicon.svg" width="256" height="256" alt="lorem"></a>
+        <img id='img' class='image' src="favicon.svg" width="256" height="256" alt="image">
+
+
+
     </div>
+
+
+
+    <div class="hystmodal" id="myModal" aria-hidden="true">
+        <button data-hystclose class="hystmodal__close">Закрыть</button>
+        <div class="hystmodal__wrap">
+            <div class="hystmodal__window" role="dialog" aria-modal="true">
+                <h1 id="pimg">Profile image of {user}</h1>
+                <img id='mimg' src="favicon.svg" alt="Image" />
+            </div>
+        </div>
+    </div>
+
+
+    <script src="assets/js/hystmodal.min.js"></script>
+    <script>
+        const myModal = new HystModal({
+            linkAttributeName: "data-hystmodal"
+        });
+    </script>
 </body>
 
 </html>
