@@ -96,3 +96,7 @@ input {
     right: 25px;
     border-radius: 0;
 }
+
+li {
+    word-break: break-all;
+}

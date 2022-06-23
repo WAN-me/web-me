@@ -15,6 +15,11 @@ def user(req, uid):
     with open('account.html', 'r') as f:
         return 200, f.read(-1).replace("get_user(0)",f"get_user({uid})")
 
+@server.ebind('/me<uid>')
+def me(req, uid):
+    with open('me.html', 'r') as f:
+        return 200, f.read(-1).replace("load(0)",f"load({uid})")
+
 @server.bind('/')
 def index(req):
     with open('index.html', 'r') as f:

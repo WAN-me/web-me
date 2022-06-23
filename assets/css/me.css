@@ -1,0 +1,12 @@
+.me_msg {
+    color: aqua
+}
+
+.nome_msg {
+    color: rgb(255, 185, 185)
+}
+
+#field-box {
+    height: 700px;
+    overflow-y: scroll;
+}
