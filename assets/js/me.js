@@ -1,39 +1,48 @@
-async function scr() {
+function scr() {
     console.log(document.getElementById('field-box').scroll)
 }
 
-async function load(user_id) {
+function load(user_id) {
     me = JSON.parse(localStorage.getItem('me'))
     token = localStorage.getItem('token');
     field_box = document.getElementById('field-box')
-    await get_old(user_id)
+    get_old(user_id)
     field_box.scrollTop = field_box.scrollHeight;
     pl_get(user_id)
 }
 
 async function get_old(user_id) {
-    messages = await messages_gethitory(user_id, 300)
+    messages = await messages_gethitory(user_id, 50)
     console.log(messages)
     messages.items.reverse().forEach(function(message) {
         do_msg(message)
     })
 }
 
-async function do_msg(message) {
+async function draw_msg(message) {
+    msg_box = document.getElementById("msg" + message.id)
+    console.log(msg_box)
+    if (message.from_id == me.id) {
+        msg_box.textContent = message.text
+        msg_box.className = 'me_msg'
+    } else {
+        user_get(message.from_id, function(user, msg_box) {
+            console.log(user)
+            msg_box.textContent = user.name + ': ' + message.text
+            msg_box.className = 'nome_msg'
+        }, msg_box)
+    }
+}
+
+function do_msg(message) {
     console.log(message)
     var li = document.createElement("li");
-    if (message.from_id == me.id) {
-        li.appendChild(document.createTextNode(message.text));
-        li.className = 'me_msg'
-    } else {
-        user = user_get(message.from_id)
-        li.appendChild(document.createTextNode(user.name + ': ' + message.text));
-        li.className = 'nome_msg'
-    }
+    li.id = "msg" + message.id
+    document.getElementById('field-box').appendChild(li);
+    draw_msg(message)
     need_scroll = field_box.scrollTop + 1000 >= field_box.scrollHeight
     console.log(field_box.scrollTop, field_box.scrollHeight)
     console.log(need_scroll)
-    document.getElementById('field-box').appendChild(li);
     if (need_scroll)
         field_box.scrollTop = field_box.scrollHeight;
 }
