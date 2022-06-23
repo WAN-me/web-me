@@ -1,7 +1,7 @@
 from traceback import print_tb
 import sbeaver
 from sbeaver import file_server
-server = sbeaver.Server(port=8000, sync=False)
+server = sbeaver.Server(port=3050, sync=False)
 import re
 
 
