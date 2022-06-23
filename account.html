@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>WANilla</title>
+    <script type="text/javascript" src="assets/js/api.js"></script>
     <script type="text/javascript" src="assets/js/user.js"></script>
 
     <link rel="stylesheet" type="text/css" href="assets/css/user.css">
@@ -16,8 +17,8 @@
     <div id="field-box">
         <p class="field-box-title" id="hello_user">Hello, {user}</p>
         <p id="online">online</p>
-        <img id='img' class='image' src="favicon.svg" width="256" height="256" alt="image">
-
+        <img id='img' class='img' src="favicon.svg" width="256" height="256" alt="image">
+        <input type="button" onclick="set_image()" value="change" id='change' class="change">
 
 
     </div>

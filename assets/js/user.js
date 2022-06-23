@@ -13,21 +13,11 @@ function set_image() {
     }
 }
 
-
 async function get_user(user_id) {
 
     token = localStorage.getItem('token');
     me = JSON.parse(localStorage.getItem('me'))
-    res = await fetch('https://api.wanilla.ru/method/users.get?accesstoken=' + token + "&id=" + user_id, {
-        method: 'POST'
-    });
-
-    json = await res.json()
-        //if (res.status != 200) {
-        //    alert(json.error.text)
-        //} else {
-        //    localStorage.setItem('me', JSON.stringify(json))
-        //}
+    json = user_get(user_id)
 
     if (!me) {
         console.log("нет имени!")
@@ -35,6 +25,7 @@ async function get_user(user_id) {
     }
     document.getElementById('hello_user').textContent = json.name + '`s profile'
     document.getElementById('pimg').textContent = "Profile image of " + json.name
+    document.getElementById('change').remove()
     document.title = json.name
     now = new Date().getTime()
     if (json.online_state >= now / 1000) {
