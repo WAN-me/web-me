@@ -1,6 +1,5 @@
 function set_image() {
     console.log('imgs')
-    token = localStorage.getItem('token');
     url = prompt('insert new image url')
     if (url != "" && url != null) {
         console.log(url)
@@ -15,17 +14,13 @@ function set_image() {
 
 async function get_user(user_id) {
 
-    token = localStorage.getItem('token');
-    me = JSON.parse(localStorage.getItem('me'))
-    if (!me) {
-        console.log("нет имени!")
-        window.location.href = 'auth.html';
-    }
+
     json = await user_get(user_id, function(json) {
         console.log(json)
         document.getElementById('hello_user').textContent = json.name + '`s profile'
         document.getElementById('pimg').textContent = "Profile image of " + json.name
-        document.getElementById('change').remove()
+        if (user_id != 0 && user_id != me.id)
+            document.getElementById('change').remove()
         document.title = json.name
         now = new Date().getTime()
         if (json.online_state >= now / 1000) {

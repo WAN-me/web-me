@@ -22,3 +22,10 @@ async function messages_gethitory(user_id, count = 10, ofset = 0) {
     console.log(res)
     return await res.json()
 }
+
+async function messages_chats(count = 10, ofset = 0) {
+    res = await fetch('https://api.wanilla.ru/method/messages.chats?accesstoken=' + token + "&count=" + count + "&ofset=" + ofset, {
+        method: 'GET'
+    });
+    return await res.json()
+}

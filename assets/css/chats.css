@@ -1,0 +1,11 @@
+.chat {
+    background-color: rgb(0, 0, 0);
+}
+
+.chat:hover {
+    background-color: rgb(34, 34, 34);
+}
+
+p {
+    padding: 5pt;
+}

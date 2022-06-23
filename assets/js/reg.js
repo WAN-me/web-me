@@ -1,5 +1,4 @@
 async function reg() {
-    console.log('auth')
     login = document.getElementById('login').value
     password = document.getElementById('password').value
     name = document.getElementById('name').value

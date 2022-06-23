@@ -25,15 +25,36 @@ function scr() {
     console.log(document.getElementById('field-box').scroll)
 }
 
-function load(user_id) {
-    me = JSON.parse(localStorage.getItem('me'))
-    if (!me) {
-        window.location.href = 'auth.html';
+async function load_info(user_id) {
+    user = await user_get(user_id)
+    document.getElementById('username').textContent = user.name
+    document.getElementById('user-image').src = user.image
+    document.getElementById('user-link').href = 'https://wanilla.ru/user' + user.id
+    document.title = user.name
+    now = new Date().getTime()
+    if (user.online_state >= now / 1000) {
+        document.getElementById('online').textContent = 'Online'
+    } else {
+        diff = now / 1000 - user.online_state
+        if (diff < 120) {
+            document.getElementById('online').textContent = 'Just now'
+        } else if (diff < 3600) {
+            document.getElementById('online').textContent = parseInt((diff / 60)) + " minutes ago"
+        } else if (diff < 86400) {
+            document.getElementById('online').textContent = parseInt(diff / 3600) + " hours ago"
+        } else if (diff > 86400) {
+            document.getElementById('online').textContent = parseInt(diff / 86400) + " days ago"
+        }
+
     }
-    token = localStorage.getItem('token');
+}
+
+function load(user_id) {
+
     field_box = document.getElementById('field-box')
     get_old(user_id)
     field_box.scrollTop = field_box.scrollHeight;
+    load_info(user_id)
     pl_get(user_id)
 }
 

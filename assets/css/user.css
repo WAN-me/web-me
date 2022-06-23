@@ -1,16 +1,6 @@
-img {
-    object-fit: cover;
-}
-
 #change {
-    opacity: 0;
-    position: absolute;
     width: auto;
     left: 30px;
     bottom: 30px;
     width: 246px
-}
-
-#change:hover {
-    opacity: 1;
 }

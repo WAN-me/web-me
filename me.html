@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>WANilla</title>
+    <script type="text/javascript" src="assets/js/base.js"></script>
     <script type="text/javascript" src="assets/js/api.js"></script>
 
     <link rel="stylesheet" type="text/css" href="assets/css/ui.css">
@@ -12,6 +13,11 @@
 </head>
 
 <body onload="load(0)">
+    <div id="user-info">
+        <a id='user-link' href=""><img id="user-image" src=""></a>
+        <p id='username'>{user}</p>
+        <p id='online'> {online}</p>
+    </div>
     <div id="field-box">
         <p id="msgs"></p>
     </div>

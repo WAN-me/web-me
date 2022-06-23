@@ -33,3 +33,35 @@
     right: 34%;
     margin: 3pt;
 }
+
+#user-info {
+    height: 100px;
+    width: 30%;
+    margin: auto;
+}
+
+#user-image {
+    height: 100px;
+    width: 100px;
+}
+
+#username {
+    position: absolute;
+    top: 10px;
+    height: 24pt;
+    font-size: 14pt;
+    left: 34%;
+    margin-left: 120px;
+    color: rgb(0, 0, 0)
+}
+
+#online {
+    position: absolute;
+    top: 10px;
+    font-size: 14pt;
+    height: 24pt;
+    left: 34%;
+    margin-left: 120px;
+    margin-top: 25pt;
+    color: rgb(0, 0, 0)
+}
