@@ -1,9 +1,35 @@
+textbox = document.getElementById('inp-box')
+textbox.addEventListener("keydown", function(event) {
+    if (event.key == 'Enter') {
+        event.preventDefault();
+        send_msg()
+    }
+});
+
+async function send_msg() {
+    if (textbox.text != "") {
+        user_id = location.pathname.split('me')[1]
+        console.log(user_id)
+        text = textbox.value
+        res = fetch('https://api.wanilla.ru/method/messages.send?accesstoken=' + token + "&to_id=" + user_id, {
+            method: 'POST',
+            body: JSON.stringify({
+                text: text
+            })
+        });
+        textbox.value = ""
+    }
+}
+
 function scr() {
     console.log(document.getElementById('field-box').scroll)
 }
 
 function load(user_id) {
     me = JSON.parse(localStorage.getItem('me'))
+    if (!me) {
+        window.location.href = 'auth.html';
+    }
     token = localStorage.getItem('token');
     field_box = document.getElementById('field-box')
     get_old(user_id)

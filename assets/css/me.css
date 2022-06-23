@@ -10,3 +10,26 @@
     height: 700px;
     overflow-y: scroll;
 }
+
+#input-div {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#inp-box {
+    position: absolute;
+    left: 34%;
+    height: 20pt;
+    width: 30%;
+    font-family: monospace;
+    box-sizing: border-box;
+    border-style: none;
+}
+
+#inp-btn {
+    position: absolute;
+    height: 24pt;
+    right: 34%;
+    margin: 3pt;
+}

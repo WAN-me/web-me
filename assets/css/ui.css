@@ -43,7 +43,10 @@ input {
         background: var(--bg-color);
         position: relative;
         width: 30%;
-        margin: 150px auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 150px;
+        margin-bottom: 0px;
         padding: 25px;
         border-radius: 25px;
     }
@@ -98,5 +101,5 @@ input {
 }
 
 li {
-    word-break: break-all;
+    word-break: break-word;
 }
